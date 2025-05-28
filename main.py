@@ -8,12 +8,13 @@ source_name = st.text_input("Source CARD Name")
 source_type = st.text_input("Source CARD Type")
 source_slot = st.text_input("Source CARD Slot")
 
+uploaded_source = st.file_uploader("Upload Source XML", type="xml")
+
 st.subheader(" Carte à remplacer (dans le fichier destination)")
 dest_name = st.text_input("Destination CARD Name")
 dest_type = st.text_input("Destination CARD Type")
 dest_slot = st.text_input("Destination CARD Slot")
 
-uploaded_source = st.file_uploader("Upload Source XML", type="xml")
 uploaded_dest = st.file_uploader("Upload Destination XML", type="xml")
 
 if st.button("Copy the configuration"):

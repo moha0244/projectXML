@@ -17,7 +17,7 @@ def extract_card_block(lines, name, type_, slot):
             break
 
     if end_idx == -1:
-        end_idx = len(lines)  
+        end_idx = len(lines)
 
     return lines[start_idx:end_idx]
 
@@ -32,7 +32,7 @@ def replace_card_block(dest_lines, name, type_, slot, new_block):
             break
 
     if start_idx == -1:
-        return None  # not found
+        return None
 
     for j in range(start_idx + 1, len(dest_lines)):
         if '<CARD Name="' in dest_lines[j] and j != start_idx:
@@ -42,5 +42,4 @@ def replace_card_block(dest_lines, name, type_, slot, new_block):
     if end_idx == -1:
         end_idx = len(dest_lines)
 
-    # replace the old block
     return dest_lines[:start_idx] + new_block + dest_lines[end_idx:]
